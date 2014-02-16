@@ -28,8 +28,8 @@ OBJDUMP		= $(PREFIX)-objdump
 GDB		= $(PREFIX)-gdb
 FLASH		= $(shell which st-flash)
 
-TOOLCHAIN_DIR ?= ../../../libopencm3
-ifeq ($(wildcard ../../../libopencm3/lib/libopencm3_stm32f3.a),)
+TOOLCHAIN_DIR ?= ../../../../../libopencm3
+ifeq ($(wildcard ../../../../../libopencm3/lib/libopencm3_stm32f3.a),)
 ifneq ($(strip $(shell which $(CC))),)
 TOOLCHAIN_DIR := $(shell dirname `which $(CC)`)/../$(PREFIX)
 endif
@@ -41,8 +41,8 @@ endif
 
 $(info tool $(TOOLCHAIN_DIR))
 
-LIBOPENCM3_PLUS ?= ../../../libopencm3-plus
-ifeq ($(wildcard ../../../libopencm3-plus/lib/libopencm3_plus_stm32f3discovery.a),)
+LIBOPENCM3_PLUS ?= ../../../../../libopencm3-plus
+ifeq ($(wildcard ../../../../../libopencm3-plus/lib/libopencm3_plus_stm32f3discovery.a),)
 ifneq ($(strip $(shell which $(CC))),)
 LIBOPENCM3_PLUS := $(shell dirname `which $(CC)`)/../$(PREFIX)
 endif

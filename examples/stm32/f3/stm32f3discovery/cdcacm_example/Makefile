@@ -21,7 +21,7 @@ BINARY = cdcacm_example
 
 OBJS :=
 
-LDSCRIPT = ../../../libopencm3-plus/lib/libopencm3_plus_stm32f3discovery.ld
+LDSCRIPT = ../../../../../libopencm3-plus/lib/libopencm3_plus_stm32f3discovery.ld
 
 OOCD_INTERFACE = stlink-v2
 OOCD_BOARD = stm32f3discovery

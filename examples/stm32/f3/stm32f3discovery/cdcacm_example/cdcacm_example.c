@@ -16,11 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <libopencm3/stm32/f3/rcc.h>
-#include <libopencm3/stm32/f3/gpio.h>
-#include <libopencm3/stm32/f3/timer.h>
+#include <libopencm3/stm32/rcc.h>
+#include <libopencm3/stm32/gpio.h>
+#include <libopencm3/stm32/timer.h>
 #include <libopencm3-plus/newlib/syscall.h>
-#include <cdcacm_example.h>
+#include "cdcacm_example.h"
 #include <libopencm3-plus/cdcacm_one_serial/cdcacm.h>
 #include <stdio.h>
 #include <libopencm3-plus/utils/misc.h>
@@ -34,7 +34,7 @@ void leds_init(void) {
 }
 
 void system_init(void) {
-  rcc_clock_setup_hsi(&hsi_8mhz[CLOCK_48MHZ]);
+  rcc_clock_setup_hsi(&rcc_hsi_8mhz[RCC_CLOCK_48MHZ]);
   leds_init();
   cdcacm_init();
 }
